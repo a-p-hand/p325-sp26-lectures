@@ -2,7 +2,7 @@
 
 from math import sqrt, ceil
 
-def trapezint(func, a, b):
+def trapezint(func, a, b, n):
     """
     Approximate an integral of func() over the range [a,b] using 4 trapezoids
 
@@ -14,8 +14,6 @@ def trapezint(func, a, b):
     Returns:
         The approximation of the integral (float)
     """
-
-    n = 4           # use 4 trapezoids
     base = (b-a)/n  # all trapezoids have equal base
 
     sum = 0
