@@ -1,0 +1,20 @@
+from trapezoids import trapezint
+from math import sin, pi
+
+def hat(x):
+    """Simple function that equals 1 between [0,1] and 0 otherwise"""
+    if 0 <= x < 1:
+        return x
+    if 1 <= x < 2:
+        return 2-x
+    return 0
+
+def test_trapezint_hat04():
+    """Can we integrate a hat function from 0 to 4"""
+    result = trapezint(hat, 0, 4, n=4)
+    assert result == 1
+
+def test_trapezint_sin0pi():
+    import numpy as np
+    result = trapezint(np.sin, 0, np.pi, n=2)
+    assert abs(result - np.pi/2) < 1e-5
